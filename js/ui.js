@@ -42,7 +42,7 @@ export function showMessage(message, type = 'info') {
     // Hide after a few seconds
     setTimeout(() => {
         messageDiv.style.display = 'none';
-    }, 5000);
+    }, 8000);
 }
 
 
@@ -55,7 +55,10 @@ export function showMessage(message, type = 'info') {
 export function createDogImageCard(image, buttonConfig = {}) {
     const card = document.createElement('div');
     card.className = 'dog-image-card';
-    card.dataset.imageId = image.id; // Store the inmage's ID on the card for easy access
+    card.dataset.imageId = image.id; // Store the image's ID on the card for easy access
+    if (image.favorite_id) { // If the image has been favorited, store its favorite_id
+        card.dataset.favoriteId = image.favorite_id;
+    }
 
     const img = document.createElement('img');
     img.src = image.url;
@@ -66,12 +69,14 @@ export function createDogImageCard(image, buttonConfig = {}) {
     const actionsDiv = document.createElement('div');
     actionsDiv.className = 'actions';
 
-    // Add a button based on the buttonConfig
+    // Add a button based on the buttonConfig object
     if (buttonConfig.text && buttonConfig.className && buttonConfig.onClick) {
         const actionButton = document.createElement('button');
         actionButton.textContent = buttonConfig.text;
         actionButton.className = buttonConfig.className;
-        actionButton.addEventListener('click', () => buttonConfig.onClick(image.id, image.image_id || null)); // Pass image_id for favorites
+        // Pass image.id and image.favorite_id to the onClick handler
+        // The handler will use each one as appropriate
+        actionButton.addEventListener('click', () => buttonConfig.onClick(image.id, image.favorite_id || null));
         actionsDiv.appendChild(actionButton);
     }
 
