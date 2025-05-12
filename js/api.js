@@ -1,7 +1,7 @@
 /**
  * RESPONSIBLE FOR ALL COMMUNICATION WITH THE DOG API
  */
-const API_KEY = 'live_CKDaBwsUvLwsD8QOO5mzUqmgAQnf5rMhMIPb84FPTZMYKPfMvPqD6fi0taepTWRT';
+const API_KEY = 'YOUR_DOG_API_KEY';
 const BASE_URL = 'https://api.thedogapi.com/v1'; // base URL of The Dog API
 const SUB_ID = 'user_id_12345'; // unique identifier for the "user" or session.
 
