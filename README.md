@@ -49,7 +49,7 @@ To run this application, you need an API key from The Dog API.
 
     ```javascript
     // js/api.js
-    const API_KEY = 'YOUR_DOG_API_KEY_HERE';
+    const API_KEY = 'YOUR_DOG_API_KEY';
     ```
     (Note: In a production environment, API keys should ideally be stored and managed on a backend server to prevent client-side exposure.)
 
