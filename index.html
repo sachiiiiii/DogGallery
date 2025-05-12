@@ -1,0 +1,50 @@
+<!-- MAIN APPLICATION PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dog Encyclopedia</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to The Dog Encyclopedia!</h1>
+    </header>
+
+    <main>
+        <!-- Search -->
+        <section id="search-section">
+            <h2>Find Your Favorite Breed</h2>
+            <input type="text" id="breed-input" placeholder="Enter breed name (e.g., husky)">
+            <button id="search-button">Search</button>
+            <button id="clear-button">Clear Results</button>
+        </section>
+
+        <!-- Dog Images -->
+        <section id="gallery-section">
+            <h2>Dog Gallery</h2>
+            <div id="dog-images-container" class="image-gallery">
+                </div>
+            <div class="pagination">
+                <button id="prev-page" disabled>Previous</button>
+                <button id="next-page">Next</button>
+            </div>
+        </section>
+
+        <!-- User Favourites -->
+        <section id="favorites-section">
+            <h2>My Favorites</h2>
+            <div id="favorite-images-container" class="image-gallery">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Dog App</p>
+    </footer>
+
+    
+</body>
+</html>
